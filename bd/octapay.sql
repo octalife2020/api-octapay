@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Mar-2021 às 14:27
+-- Tempo de geração: 03-Mar-2021 às 18:38
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -94,10 +94,10 @@ INSERT INTO `antecipacao` (`id`, `dias_antecipar`, `periodo_antecipacao`, `porce
 CREATE TABLE `api` (
   `id` int(11) NOT NULL,
   `usuario` int(11) DEFAULT NULL,
-  `token` int(11) DEFAULT NULL,
-  `chave` int(11) DEFAULT NULL,
-  `created_at` int(11) DEFAULT NULL,
-  `updated_at` int(11) DEFAULT NULL
+  `token` varchar(100) DEFAULT NULL,
+  `chave` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -743,7 +743,7 @@ CREATE TABLE `configuracao_checkout` (
 --
 
 INSERT INTO `configuracao_checkout` (`id`, `chave_producao`, `token_producao`, `chave_sandbox`, `token_sandbox`, `sandbox`, `usuario_ultima_alteracao`, `created_at`, `updated_at`) VALUES
-(1, 'KFKYGAK98QJ8W3PYFWB65PDHKH7LVJFWLXK8QEMX', 'AHCKHLXMMZTPWZ9SHOPH2RWPMT6W8CAU', 'LWSLY0OKFYUYJAV1LAQSSMNYOL6OVGK4KCED87FO', 'K5DRSX8C9CVGZMQGEFMMT03YVQOKJTYF', 1, 12, '2020-12-28 15:01:26', '2020-12-28 15:01:26');
+(1, NULL, NULL, 'LWSLY0OKFYUYJAV1LAQSSMNYOL6OVGK4KCED87FO', 'K5DRSX8C9CVGZMQGEFMMT03YVQOKJTYF', 1, 12, '2020-12-28 15:01:26', '2020-12-28 15:01:26');
 
 -- --------------------------------------------------------
 
@@ -2047,7 +2047,7 @@ INSERT INTO `usuario_premium` (`id`, `codigo`, `usuario`, `indicado`, `expiracao
 CREATE TABLE `vendas` (
   `id` int(11) NOT NULL,
   `transacao` varchar(30) DEFAULT NULL,
-  `produto` int(255) DEFAULT NULL,
+  `produto` int(11) DEFAULT NULL,
   `plano` int(11) DEFAULT NULL,
   `comprador` int(11) DEFAULT NULL,
   `endereco` int(11) DEFAULT NULL,

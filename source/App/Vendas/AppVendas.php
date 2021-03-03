@@ -94,4 +94,9 @@ class AppVendas
         return implode(" ", $sql);
         
     }
+
+    public function error($data)
+    {
+        echo "error " . $data["errcode"];
+    }
 }

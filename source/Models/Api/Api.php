@@ -5,6 +5,7 @@ namespace Source\Models\Api;
 use CoffeeCode\DataLayer\DataLayer;
 use Source\Models\Usuarios\Usuario;
 use Source\Models\Produtos\Produto;
+use Source\Models\Produtos\Plano;
 
 class Api extends DataLayer
 {
@@ -13,28 +14,18 @@ class Api extends DataLayer
         parent::__construct( "api", [] );
     }
 
-    public function dataAfiliado(){
-        return (new Usuario())->find("id = :uid", "uid={$this->afiliado}")->fetch();
-    }
-
-    public function dataProduto(){
-        return (new Produto())->findById($this->produto);
+    public function dataUsuario(){
+        return (new Usuario())->findById($this->usuario);
     }
 }
 
 /** PROPRIEDADES
  * 
  *	id int(11)
- *  codigo varchar(20)
- *  produto int(11)
+ *  usuario int(11)
  *  afiliado int(11)
- *  status int(11)
- *  ativo int(11)
- *  liberar_comprador
- *  tempo_cookie int(11)
- *  tipo_comissao int(11)
- *  comissao_afiliado decimal(10,2)
- *  tipo_atribuicao tinyint(1)
+ *  token varchar(100)
+ *  chave varchar(100)
  *  created_at timestamp
  *  updated_at timestamp
  */
