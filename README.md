@@ -1,4 +1,4 @@
-# api-octapay
+# API OCTAPAY
 
 Com essa API você poderá:
 
@@ -56,15 +56,15 @@ Dados retornados
     },
     "comprador": {
         "nome": "Cliente Demonstração",
-        "email": "cliente@sandbox.monetizze.com.br",
+        "email": "cliente@octa.com.br",
         "cnpj_cpf": "012.345.678.90",
         "telefone": "3131660838",
-        "cep": "31000000",
+        "cep": "33000000",
         "rua": "Rua Demonstração",
         "numero": "110",
         "complemento": "1",
-        "bairro": "Santa Monica",
-        "cidade": "Belo Horizonte",
+        "bairro": "Centro",
+        "cidade": "Governador Valadares",
         "estado": "MG",
         "pais": "BR"
     },
@@ -75,7 +75,6 @@ Dados retornados
         "email": ""
     }, 
    "total_registros": "1",
-   "paginas": 1,
-   "error": ""
+   "paginas": 1
 }
 ````
